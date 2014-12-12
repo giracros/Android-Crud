@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Parcial3</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="lblName">Bienvenido a la Biblioteca Virgilio Barco</string>
+    <string name="txtName">Name</string>
+    <string name="btnIngresar">Ingresar</string>
+    <string name="title_activity_registro">Registro</string>
+    <string name="title_activity_lista__libros">Lista_Libros</string>
+    <string name="codigoisbn">Codigo ISBN</string>
+    <string name="libroname">Nombre Libro</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="autor">Autor</string>
+    <string name="genero">Genero</string>
+    <string name="editorial">Editorial</string>
+    <string name="paginas">Nro Paginas</string>
+    <string name="lblclasi">Calificacion</string>
+    <string name="btnCreate">Crear</string>
+    <string name="btnUpdate">Modificar</string>
+    <string name="btnDelte">Eliminar</string>
+    <string name="btnConsultar">Consultar Libros</string>
+    <string name="btnBack">Back</string>
+    <string name="btnConsulta">Consulta</string>
+    <string name="btnClean">Clean</string>
+
+</resources>
