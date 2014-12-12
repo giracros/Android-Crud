@@ -1,9 +1,12 @@
 package com.cur.parcial3;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class Bienvenida extends ActionBarActivity {
@@ -12,6 +15,14 @@ public class Bienvenida extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bienvenida);
+        Button btnContactos = (Button) findViewById(R.id.btnIngresar);
+        btnContactos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Bienvenida.this, Registro.class);
+                startActivity(i);
+            }
+        });
     }
 
 

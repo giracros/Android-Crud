@@ -19,7 +19,12 @@ import java.util.ArrayList;
 public class Registro extends ActionBarActivity {
 
     private EditText codigoIsb, nombreLibro, descripcion, genero, autor, editorial, nroPaginas;
-    private Button btnAgregar, btnListar, btnConsultar, btnModificar, btnEliminar, btnCancelar;
+    private Button btnModificar;
+    private Button btnEliminar;
+    private Button btnListar;
+    private Button btnConsultar;
+    private Button btnAgregar;
+    private Button btnCancelar;
     private int libroConsultado;
 
     @Override
@@ -48,8 +53,11 @@ public class Registro extends ActionBarActivity {
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
+
                 LibrosDao db = new LibrosDao(Registro.this);
+
                 LibrosDto libro = new LibrosDto();
+
                 libro.setCodigoIsbn(Integer.parseInt(codigoIsb.getText().toString()));
                 libro.setNombreLibro(nombreLibro.getText().toString());
                 libro.setDescripcion(descripcion.getText().toString());
@@ -94,8 +102,7 @@ public class Registro extends ActionBarActivity {
                     genero.setText(libro.getGenero());
                     autor.setText(libro.getAutor());
                     editorial.setText(libro.getEditorial());
-                    nroPaginas.setText(libro.getNroPaginas());
-
+                    nroPaginas.setText(String.valueOf(libro.getNroPaginas()));
                     btnModificar.setEnabled(true);
                     btnEliminar.setEnabled(true);
                 }
@@ -154,11 +161,7 @@ public class Registro extends ActionBarActivity {
                 nroPaginas.setText("");
             }
         });
-
-
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -16,16 +16,13 @@ import java.util.ArrayList;
 
 public class Lista_Libros extends ActionBarActivity {
 
-    private ListView lista;
-    private Button btnRegresar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_libros);
 
-        lista = (ListView) findViewById(R.id.listLibros);
-        btnRegresar = (Button) findViewById(R.id.btnBackP);
+        ListView lista = (ListView) findViewById(R.id.listLibros);
+        Button btnRegresar = (Button) findViewById(R.id.btnBackP);
 
         ArrayList<LibrosDto> libros = (ArrayList<LibrosDto>) getIntent().getSerializableExtra("libros");
         ArrayAdapter<LibrosDto> adpLibro = new ArrayAdapter<LibrosDto>(this, android.R.layout.simple_list_item_1, libros);

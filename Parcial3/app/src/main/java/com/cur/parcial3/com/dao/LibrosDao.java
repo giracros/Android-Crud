@@ -31,7 +31,7 @@ public class LibrosDao extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE libro (" + "id INTEGER(10,0) PRIMARY KEY AUTOINCREMENT NOT NULL," + "codigoIsbn INTEGER(10,0) NOT NULL," + "nombreLibro TEXT(50,0) NOT NULL," + "descripcion TEXT(300,0) NOT NULL," + "autor TEXT(50,0) NOT NULL," + "genero  TEXT(50,0) NOT NULL, " + "editorial  TEXT(50,0) NOT NULL, " + "nroPaginas INTEGER(4,0) NOT NULL)\";";
+        String sql = "CREATE TABLE libro (" + "id INTEGER PRIMARY KEY AUTOINCREMENT," + "codigoIsbn INTEGER(10,0) NOT NULL," + "nombreLibro TEXT(50,0) NOT NULL," + "descripcion TEXT(300,0) NOT NULL," + "autor TEXT(50,0) NOT NULL," + "genero  TEXT(50,0) NOT NULL, " + "editorial  TEXT(50,0) NOT NULL, " + "nroPaginas INTEGER(4,0) NOT NULL)";
         db.execSQL(sql);
     }
 
@@ -97,7 +97,7 @@ public class LibrosDao extends SQLiteOpenHelper {
                         "nroPaginas"};
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query("libro", columns, "isbn = ?",
+        Cursor cursor = db.query("libro", columns, "codigoIsbn = ?",
                 new String[]{String.valueOf(isbn)}, null, null, null, null);
         if (cursor != null) {
 
@@ -123,7 +123,7 @@ public class LibrosDao extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        int e = db.delete("libro", "isbn = ?", new String[]{String.valueOf(isbn)});
+        int e = db.delete("libro", "codigoIsbn = ?", new String[]{String.valueOf(isbn)});
         db.close();
         return e;
     }
